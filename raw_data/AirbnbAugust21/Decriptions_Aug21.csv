@@ -1,0 +1,136 @@
+Data Dictionary for listings.csv detailed file,,,
+,,,
+File Name,,listings.csv,
+Version,,4,
+Date Introduced,,"August, 2020",
+Description,,,
+,,,
+Field,Description,Type,Calculated
+id,Airbnb's unique identifier for the listing,integer,
+listing_url,,text,y
+scrape_id,"Inside Airbnb ""Scrape"" this was part of",bigint,y
+last_scraped,"UTC. The date and time this listing was ""scraped"".",datetime,y
+name,Name of the listing,text,
+description,Detailed description of the listing,text,
+neighborhood_overview,Host's description of the neighbourhood,text,
+picture_url,URL to the Airbnb hosted regular sized image for the listing,text,
+host_id,Airbnb's unique identifier for the host/user,integer,
+host_url,The Airbnb page for the host,text,y
+host_name,Name of the host. Usually just the first name(s).,text,
+host_since,The date the host/user was created. For hosts that are Airbnb guests this could be the date they registered as a guest.,date,
+host_location,The host's self reported location,text,
+host_about,Description about the host,text,
+host_response_time,,,
+host_response_rate,,,
+host_acceptance_rate,That rate at which a host accepts booking requests.,,
+host_is_superhost,,boolean [t=true; f=false],
+host_thumbnail_url,,text,
+host_picture_url,,text,
+host_neighbourhood,,text,
+host_listings_count,The number of listings the host has (per Airbnb calculations),text,
+host_total_listings_count,The number of listings the host has (per Airbnb calculations),text,
+host_verifications,,,
+host_has_profile_pic,,boolean [t=true; f=false],
+host_identity_verified,,boolean [t=true; f=false],
+neighbourhood,,text,
+neighbourhood_cleansed,The neighbourhood as geocoded using the latitude and longitude against neighborhoods as defined by open or public digital shapefiles.,text,y
+neighbourhood_group_cleansed,The neighbourhood group as geocoded using the latitude and longitude against neighborhoods as defined by open or public digital shapefiles.,text,y
+latitude,Uses the World Geodetic System (WGS84) projection for latitude and longitude.,numeric,
+longitude,Uses the World Geodetic System (WGS84) projection for latitude and longitude.,numeric,
+property_type,Self selected property type. Hotels and Bed and Breakfasts are described as such by their hosts in this field,text,
+room_type,"[Entire home/apt|Private room|Shared room|Hotel]
+
+All homes are grouped into the following three room types:
+
+Entire place
+Private room
+Shared room
+Entire place
+Entire places are best if you're seeking a home away from home. With an entire place, you'll have the whole space to yourself. This usually includes a bedroom, a bathroom, a kitchen, and a separate, dedicated entrance. Hosts should note in the description if they'll be on the property or not (ex: ""Host occupies first floor of the home""), and provide further details on the listing.
+
+Private rooms
+Private rooms are great for when you prefer a little privacy, and still value a local connection. When you book a private room, you'll have your own private room for sleeping and may share some spaces with others. You might need to walk through indoor spaces that another host or guest may occupy to get to your room.
+
+Shared rooms
+Shared rooms are for when you don't mind sharing a space with others. When you book a shared room, you'll be sleeping in a space that is shared with others and share the entire space with other people. Shared rooms are popular among flexible travelers looking for new friends and budget-friendly stays.",text,
+accommodates,The maximum capacity of the listing,integer,
+bathrooms,The number of bathrooms in the listing,numeric,
+bathrooms_text,"The number of bathrooms in the listing. 
+On the Airbnb web-site, the bathrooms field has evolved from a number to a textual description. For older scrapes, bathrooms is used.",string,
+bedrooms,The number of bedrooms,integer,
+beds,The number of bed(s),integer,
+amenities,,json,
+price,daily price in local currency,currency,
+minimum_nights,minimum number of night stay for the listing (calendar rules may be different),integer,
+maximum_nights,maximum number of night stay for the listing (calendar rules may be different),integer,
+minimum_minimum_nights,the smallest minimum_night value from the calender (looking 365 nights in the future),integer,y
+maximum_minimum_nights,the largest minimum_night value from the calender (looking 365 nights in the future),integer,y
+minimum_maximum_nights,the smallest maximum_night value from the calender (looking 365 nights in the future),integer,y
+maximum_maximum_nights,the largest maximum_night value from the calender (looking 365 nights in the future),integer,y
+minimum_nights_avg_ntm,the average minimum_night value from the calender (looking 365 nights in the future),numeric,y
+maximum_nights_avg_ntm,the average maximum_night value from the calender (looking 365 nights in the future),numeric,y
+calendar_updated,,date,
+has_availability,[t=true; f=false],boolean,
+availability_30,avaliability_x. The availability of the listing x days in the future as determined by the calendar. Note a listing may not be available because it has been booked by a guest or blocked by the host.,integer,y
+availability_60,avaliability_x. The availability of the listing x days in the future as determined by the calendar. Note a listing may not be available because it has been booked by a guest or blocked by the host.,integer,y
+availability_90,avaliability_x. The availability of the listing x days in the future as determined by the calendar. Note a listing may not be available because it has been booked by a guest or blocked by the host.,integer,y
+availability_365,avaliability_x. The availability of the listing x days in the future as determined by the calendar. Note a listing may not be available because it has been booked by a guest or blocked by the host.,integer,y
+calendar_last_scraped,,date,
+number_of_reviews,The number of reviews the listing has,integer,
+number_of_reviews_ltm,The number of reviews the listing has (in the last 12 months),integer,y
+number_of_reviews_l30d,The number of reviews the listing has (in the last 30 days),integer,y
+first_review,The date of the first/oldest review,date,y
+last_review,The date of the last/newest review,date,y
+review_scores_rating,,,
+review_scores_accuracy,,,
+review_scores_cleanliness,,,
+review_scores_checkin,,,
+review_scores_communication,,,
+review_scores_location,,,
+review_scores_value,,,
+license,The licence/permit/registration number,text,
+instant_bookable,[t=true; f=false]. Whether the guest can automatically book the listing without the host requiring to accept their booking request. An indicator of a commercial listing.,boolean,
+calculated_host_listings_count,"The number of listings the host has in the current scrape, in the city/region geography.",integer,y
+calculated_host_listings_count_entire_homes,"The number of Entire home/apt listings the host has in the current scrape, in the city/region geography",integer,y
+calculated_host_listings_count_private_rooms,"The number of Private room listings the host has in the current scrape, in the city/region geography",integer,y
+calculated_host_listings_count_shared_rooms,"The number of Shared room listings the host has in the current scrape, in the city/region geography",integer,y
+reviews_per_month,The number of reviews the listing has over the lifetime of the listing,numeric,y
+,,,
+Change control,,,
+Field,,Change,
+summary,,Removed,
+space,,Removed,
+experiences_offered,,Removed,
+notes,,Removed,
+transit,,Removed,
+access,,Removed,
+interaction,,Removed,
+house_rules,,Removed,
+thumbnail_url,,Removed,
+medium_url,,Removed,
+xl_picture_url,,Removed,
+street,,Removed,
+city,,Removed,
+state,,Removed,
+zipcode,,Removed,
+market,,Removed,
+smart_location,,Removed,
+country_code,,Removed,
+country,,Removed,
+is_location_exact,,Removed,
+bed_type,,Removed,
+square_feet,,Removed,
+weekly_price,,Removed,
+monthly_price,,Removed,
+security_deposit,,Removed,
+cleaning_fee,,Removed,
+guests_included,,Removed,
+extra_people,,Removed,
+requires_license,,Removed,
+jurisdiction_names,,Removed,
+is_business_travel_ready,,Removed,
+cancellation_policy,,Removed,
+require_guest_profile_picture,,Removed,
+require_guest_phone_verification,,Removed,
+bathrooms_text,,Added,
+number_of_reviews_l30d,,Added,
